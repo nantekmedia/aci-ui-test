@@ -1,0 +1,27 @@
+<h1>Users List</h1>
+<hr>
+<div class="card">	
+	<div class="card-body">
+		<table class="table table-striped table-responsive-md">
+			<thead>
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">User Name</th>
+					<th scope="col">Name</th>
+					<th scope="col">Email</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let item of userService.usersList; index as i" [routerLink]="['/acp/admin/user/', item.id]">
+					<td scope="row">{{ i + 1 }}</td>
+					<td>
+						<!-- <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px"> -->
+						<a [routerLink]="['/acp/admin/user/', item.id]">{{ item.username }}</a>
+					</td>
+					<td>{{ item.firstName + ' ' + item.lastName }}</td>
+					<td>{{ item.email }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

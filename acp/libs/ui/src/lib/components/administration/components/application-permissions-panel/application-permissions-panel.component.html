@@ -1,0 +1,157 @@
+<form class="example-form disable-select was-validated" [formGroup]="formGroup" (ngSubmit)="onFormSubmit($event)" ngNativeValidate>
+    <div class="row">
+        <div class="col-10">
+            <h2>Application Permissions</h2>
+        </div>
+
+        <div class="col-2 text-right">
+            <button type="button" [disabled]="!this.userService.hasPermission(PermissionsEnum.admin, PermissionsOperationEnum.update)" (click)="onEditBtnClick()" mat-icon-button="" class="mat-focus-indicator mat-icon-button mat-button-base">
+                <span class="mat-button-wrapper">
+                    <mat-icon role="img">edit</mat-icon>
+                </span>
+                <span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round" ng-reflect-disabled="false" ng-reflect-centered="true"></span><span class="mat-button-focus-overlay">
+                </span>
+            </button>
+            <!-- <button [disabled]="!this.userService.hasPermission(PermissionsEnum.admin, PermissionsOperationEnum.update)" class="example-icon settings-icon ml-1 float-right" aria-label="Example icon-button with heart icon"
+            mat-icon-button>
+            <button [disabled]="!this.userService.hasPermission(PermissionsEnum.admin, PermissionsOperationEnum.update)" (click)="onEditBtnClick()" mat-mini-fab color="primary" aria-label="Example icon button with a delete icon">
+                <mat-icon>edit</mat-icon>
+            </button>
+        </button> -->
+        </div>
+    </div>
+    <hr>    
+    <div class="row">
+        <div class="col-12">
+            <table class="permissions-table">
+                <thead>
+                    <tr>
+                        <th>Permission</th>
+                        <th>Create</th>
+                        <th>Read</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                        <th>List</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="width: 170px;">Admin</td>
+                        <td style="width: 120px;">
+                            <mat-slide-toggle color="primary" formControlName="adminCreate" (change)="onValChange($event, PermissionsOperationEnum.create, PermissionsEnum.admin)">
+                            </mat-slide-toggle>
+                        </td>
+                        <td style="width: 120px;">
+                            <mat-slide-toggle color="primary" formControlName="adminRead" (change)="onValChange($event, PermissionsOperationEnum.read, PermissionsEnum.admin)">
+                            </mat-slide-toggle>
+                        </td>
+                        <td style="width: 120px;">
+                            <mat-slide-toggle color="primary" formControlName="adminUpdate" (change)="onValChange($event, PermissionsOperationEnum.update, PermissionsEnum.admin)">
+                            </mat-slide-toggle>
+                        </td>
+                        <td style="width: 120px;">
+                            <mat-slide-toggle color="primary" formControlName="adminDelete" (change)="onValChange($event, PermissionsOperationEnum.delete, PermissionsEnum.admin)">
+                            </mat-slide-toggle>
+                        </td>
+                        <td style="width: 120px;">
+                            <mat-slide-toggle color="primary" formControlName="adminList" (change)="onValChange($event, PermissionsOperationEnum.list, PermissionsEnum.admin)">
+                            </mat-slide-toggle>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Dev</td>
+                        <td>
+                            <mat-slide-toggle color="primary" formControlName="devCreate" (change)="onValChange($event, PermissionsOperationEnum.create, PermissionsEnum.dev)">
+                            </mat-slide-toggle>
+                        </td>
+                        <td>
+                            <mat-slide-toggle color="primary" formControlName="devRead" (change)="onValChange($event, PermissionsOperationEnum.read, PermissionsEnum.dev)">
+                            </mat-slide-toggle>
+                        </td>
+                        <td>
+                            <mat-slide-toggle color="primary" formControlName="devUpdate" (change)="onValChange($event, PermissionsOperationEnum.update, PermissionsEnum.dev)">
+                            </mat-slide-toggle>
+                        </td>
+                        <td>
+                            <mat-slide-toggle color="primary" formControlName="devDelete" (change)="onValChange($event, PermissionsOperationEnum.delete, PermissionsEnum.dev)">
+                            </mat-slide-toggle>
+                        </td>
+                        <td>
+                            <mat-slide-toggle color="primary" formControlName="devList" (change)="onValChange($event, PermissionsOperationEnum.list, PermissionsEnum.dev)">
+                            </mat-slide-toggle>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Profile</td>
+                        <td>
+                            <mat-slide-toggle color="primary" formControlName="profileCreate" (change)="onValChange($event, PermissionsOperationEnum.create, PermissionsEnum.profile)">
+                            </mat-slide-toggle>
+                        </td>
+                        <td>
+                            <mat-slide-toggle color="primary" formControlName="profileRead" (change)="onValChange($event, PermissionsOperationEnum.read, PermissionsEnum.profile)">
+                            </mat-slide-toggle>
+                        </td>
+                        <td>
+                            <mat-slide-toggle color="primary" formControlName="profileUpdate" (change)="onValChange($event, PermissionsOperationEnum.update, PermissionsEnum.profile)">
+                            </mat-slide-toggle>
+                        </td>
+                        <td>
+                            <mat-slide-toggle color="primary" formControlName="profileDelete" (change)="onValChange($event, PermissionsOperationEnum.delete, PermissionsEnum.profile)">
+                            </mat-slide-toggle>
+                        </td>
+                        <td>
+                            <mat-slide-toggle color="primary" formControlName="profileList" (change)="onValChange($event, PermissionsOperationEnum.list, PermissionsEnum.profile)">
+                            </mat-slide-toggle>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Client</td>
+                        <td>
+                            <mat-slide-toggle color="primary" formControlName="clientCreate" (change)="onValChange($event, PermissionsOperationEnum.create, PermissionsEnum.client)">
+                            </mat-slide-toggle>
+                        </td>
+                        <td>
+                            <mat-slide-toggle color="primary" formControlName="clientRead" (change)="onValChange($event, PermissionsOperationEnum.read, PermissionsEnum.client)">
+                            </mat-slide-toggle>
+                        </td>
+                        <td>
+                            <mat-slide-toggle color="primary" formControlName="clientUpdate" (change)="onValChange($event, PermissionsOperationEnum.update, PermissionsEnum.client)">
+                            </mat-slide-toggle>
+                        </td>
+                        <td>
+                            <mat-slide-toggle color="primary" formControlName="clientDelete" (change)="onValChange($event, PermissionsOperationEnum.delete, PermissionsEnum.client)">
+                            </mat-slide-toggle>
+                        </td>
+                        <td>
+                            <mat-slide-toggle color="primary" formControlName="clientList" (change)="onValChange($event, PermissionsOperationEnum.list, PermissionsEnum.client)">
+                            </mat-slide-toggle>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Settings</td>
+                        <td>
+                            <mat-slide-toggle color="primary" formControlName="settingsCreate" (change)="onValChange($event, PermissionsOperationEnum.create, PermissionsEnum.settings)">
+                            </mat-slide-toggle>
+                        </td>
+                        <td>
+                            <mat-slide-toggle color="primary" formControlName="settingsRead" (change)="onValChange($event, PermissionsOperationEnum.read, PermissionsEnum.settings)">
+                            </mat-slide-toggle>
+                        </td>
+                        <td>
+                            <mat-slide-toggle color="primary" formControlName="settingsUpdate" (change)="onValChange($event, PermissionsOperationEnum.update, PermissionsEnum.settings)">
+                            </mat-slide-toggle>
+                        </td>
+                        <td>
+                            <mat-slide-toggle color="primary" formControlName="settingsDelete" (change)="onValChange($event, PermissionsOperationEnum.delete, PermissionsEnum.settings)">
+                            </mat-slide-toggle>
+                        </td>
+                        <td>
+                            <mat-slide-toggle color="primary" formControlName="settingsList" (change)="onValChange($event, PermissionsOperationEnum.list, PermissionsEnum.settings)">
+                            </mat-slide-toggle>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,24 @@
+<form class="" [formGroup]="userDetailsForm" (ngSubmit)="onSubmit(userDetailsForm)">
+    <div class="card">
+        <div class="card-body pt-3">
+            <acp-user-info-panel></acp-user-info-panel>
+        </div>
+    </div>
+</form>
+
+<div class="row mt-2">
+    <div class="col-lg col-md-12 pb-3" *hasPermission2="[PermissionsEnum.admin, 'read']">
+        <div class="card">
+            <div class="card-body m-2">
+                <acp-module-permissions-panel></acp-module-permissions-panel>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg col-md-12 pb-3" *hasPermission2="[PermissionsEnum.admin, 'delete']">
+        <div class="card">
+            <div class="card-body m-2">
+                <acp-application-permissions-panel></acp-application-permissions-panel>
+            </div>
+        </div>
+    </div>
+</div>

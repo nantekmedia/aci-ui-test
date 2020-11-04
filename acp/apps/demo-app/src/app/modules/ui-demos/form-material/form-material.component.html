@@ -1,0 +1,29 @@
+<!-- <p>form-material works!</p> -->
+<h1>Form with fxLayout</h1>
+<hr>
+<div flLayout="column" fxLayoutGap="7px" fxLayoutGap.xs="0px">
+    <!-- <div flLayout="column"> -->
+    <!-- <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="7px" fxLayoutGap.sm="0px"> -->
+        <div fxLayout="row" fxLayout.md="column" fxLayoutGap="7px" fxLayoutGap.sm="0px">
+        <mat-form-field fxFlex appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="firstName">
+        </mat-form-field>
+        <mat-form-field fxFlex appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lastName">
+        </mat-form-field>
+        <mat-form-field fxFlex appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lastName">
+        </mat-form-field>
+    </div>
+    <!-- <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="7px" fxLayoutGap.sm="0px"> -->
+        
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="7px" fxLayoutGap.sm="0px">
+        <mat-form-field fxFlex appearance="outline">
+            <mat-label>Title</mat-label>
+            <input matInput placeholder="Title" formControlName="title">
+        </mat-form-field>
+    </div>
+</div>

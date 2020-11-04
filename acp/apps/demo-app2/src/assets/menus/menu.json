@@ -1,0 +1,241 @@
+{
+    "main": [
+        {
+        "name": "MENU.APP-MODULES",
+        "icon": "leak_add",
+        "route": "dashboard",
+        "isOpen": false,
+        "permission": "client",
+        "children": [
+            {
+                "name": "Assentia",
+                "icon": "router",
+                "route": "acp/assentia",
+                "isOpen": false,
+                "permission": "assentia",
+                "children": []
+            },
+            {
+                "name": "APP-MODULES.DSL",
+                "icon": "router",
+                "route": "acp/dsl",
+                "isOpen": false,
+                "permission": "dsl",
+                "children": []
+            },
+            {
+                "name": "APP-MODULES.SCIP",
+                "icon": "router",
+                "route": "acp/scip",
+                "isOpen": false,
+                "permission": "scip",
+                "children": []
+            },
+            {
+                "name": "APP-MODULES.SUPO-PLUS",
+                "icon": "router",
+                "route": "acp/supo-plus",
+                "isOpen": false,
+                "permission": "supoPlus",
+                "children": []
+            },
+            {
+                "name": "APP-MODULES.SUPPLIER-MATCHING",
+                "icon": "router",
+                "route": "acp/supplier-matching",
+                "isOpen": false,
+                "permission": "supplierMatching",
+                "children": []
+            },
+            {
+                "name": "APP-MODULES.SUPPLIER-NETWORK",
+                "icon": "router",
+                "route": "acp/supplier-network",
+                "isOpen": false,
+                "permission": "supplierNetwork",
+                "children": []
+            }]
+        },
+        {
+            "name": "MENU.UI-COMPONENTS",
+            "icon": "account_tree",
+            "route": "dashboard",
+            "isOpen": false,
+            "role": "admin",            
+            "permission": "dev",
+            "children": [
+                {
+                    "name": "COMMOM.OVERVIEW",
+                    "icon": "router",
+                    "route": "acp/components/tab-set",
+                    "isOpen": false,
+                    "children": []
+                },                
+                {
+                  "name": "COMMOM.GUIDELINES",
+                  "icon": "router",
+                  "route": "acp/components/tab-set",
+                  "isOpen": false,
+                  "children": []
+                },                
+                {
+                  "name": "COMMOM.HOW-TO",
+                  "icon": "router",
+                  "route": "acp/components/tab-set",
+                  "isOpen": false,
+                  "children": []
+                }
+            ]
+        },
+        {
+            "name": "MENU.UI-SERVICES",
+            "icon": "router",
+            "route": "dashboard",
+            "isOpen": false,
+            "permission": "dev",
+            "children": [
+                {
+                    "name": "MENU.AUTHENTIFICATION",
+                    "icon": "router",
+                    "route": "dashboard",
+                    "isOpen": false,
+                    "permission": "auth-service",
+                    "children": []
+                },
+                {
+                    "name": "MENU.COMMUNICATION",
+                    "icon": "router",
+                    "route": "dashboard",
+                    "isOpen": false,
+                    "children": []
+                },
+                {
+                    "name": "MENU.CONFIGURATION",
+                    "icon": "router",
+                    "route": "dashboard",
+                    "isOpen": false,
+                    "children": []
+                },
+                {
+                    "name": "MENU.FEATURE-FLAG",
+                    "icon": "router",
+                    "route": "dashboard",
+                    "isOpen": false,
+                    "children": []
+                },
+                {
+                    "name": "MENU.LAYOUT",
+                    "icon": "router",
+                    "route": "dashboard",
+                    "isOpen": false,
+                    "children": []
+                },
+                {
+                    "name": "MENU.LOCALIZATION",
+                    "icon": "router",
+                    "route": "dashboard",
+                    "isOpen": false,
+                    "children": []
+                },
+                {
+                    "name": "MENU.MENU",
+                    "icon": "router",
+                    "route": "dashboard",
+                    "isOpen": false,
+                    "children": []
+                },
+                {
+                    "name": "Mocking",
+                    "icon": "router",
+                    "route": "dashboard",
+                    "isOpen": false,
+                    "children": []
+                },
+                {
+                    "name": "MENU.NOTIFICATION",
+                    "icon": "router",
+                    "route": "dashboard",
+                    "isOpen": false,
+                    "children": []
+                },
+                {
+                    "name": "MENU.PERMISSION",
+                    "icon": "router",
+                    "route": "dashboard",
+                    "isOpen": false,
+                    "children": []
+                },
+                {
+                    "name": "MENU.STORAGE",
+                    "icon": "router",
+                    "route": "dashboard",
+                    "isOpen": false,
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": "UI Layout",
+            "icon": "router",
+            "route": "dashboard",
+            "isOpen": false,
+            "permission": "dev",
+            "children": [
+                {
+                    "name": "Material",
+                    "icon": "router",
+                    "route": "acp/ui-demos/layout-material",
+                    "isOpen": false,
+                    "permission": "dev",
+                    "children": []
+                },
+                {
+                    "name": "Bootstrap",
+                    "icon": "router",
+                    "route": "acp/ui-demos/layout-bootstrap",
+                    "isOpen": false,
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": "Administation",
+            "icon": "admin_panel_settings",
+            "route": "",
+            "isOpen": false,
+            "permission": "admin",
+            "children": [
+                {
+                    "name": "MENU.USERS",
+                    "icon": "router",
+                    "route": "acp/admin/users",
+                    "isOpen": false,
+                    "children": []
+                },                
+                {
+                    "name": "MENU.MODULES",
+                    "icon": "router",
+                    "route": "acp/admin/modules",
+                    "isOpen": false,
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": "Profile",
+            "icon": "person",
+            "route": "acp/profile",
+            "isOpen": false,
+            "permission": "profile",
+            "children": []
+        },
+        {
+            "name": "MENU.SETTINGS",
+            "icon": "settings",
+            "route": "acp/settings",
+            "isOpen": false,
+            "permission": "settings",
+            "children": []
+        }
+    ]
+}

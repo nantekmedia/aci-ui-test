@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\..\\acp-ui\\acp\\apps\\demo-app2\\src\\assets\\menus"
+		},
+		{
+			"path": "..\\..\\acp-ui\\acp\\apps\\demo-app2\\src\\assets\\db"
+		},
+		{
+			"path": "..\\..\\acp-ui\\acp\\apps\\demo-app2\\src\\assets\\i18n"
+		}
+	],
+	"settings": {}
+}

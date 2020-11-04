@@ -1,0 +1,64 @@
+<form class="example-form disable-select was-validated" [formGroup]="formGroup" (ngSubmit)="onFormSubmit($event)" ngNativeValidate>
+    <div class="row">
+        <div class="col-10">
+            <h2>Module Permissions</h2>
+        </div>
+        <div class="col-2 text-right">
+            <button type="button" [disabled]="!this.userService.hasPermission(PermissionsEnum.admin, PermissionsOperationEnum.update)" (click)="onEditBtnClick()" mat-icon-button="" class="mat-focus-indicator mat-icon-button mat-button-base">
+                <span class="mat-button-wrapper">
+                    <mat-icon role="img">edit</mat-icon>
+                </span>
+                <span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round" ng-reflect-disabled="false" ng-reflect-centered="true" ></span><span
+                    class="mat-button-focus-overlay">
+                </span>
+            </button>              
+        </div>
+    </div>    
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <table>
+                <tr>
+                    <td>
+                        <mat-slide-toggle [disabled]="false" color="primary" formControlName="assentia" (change)="onValChange($event, PermissionsOperationEnum.read, PermissionsEnum.assentia)">
+                            Assentia
+                        </mat-slide-toggle>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-slide-toggle color="primary" formControlName="dsl" (change)="onValChange($event, PermissionsOperationEnum.read, PermissionsEnum.dsl)">
+                            DSL
+                        </mat-slide-toggle>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-slide-toggle color="primary" formControlName="scip" (change)="onValChange($event, PermissionsOperationEnum.read, PermissionsEnum.scip)">
+                            SCIP
+                        </mat-slide-toggle>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-slide-toggle color="primary" formControlName="supoPlus" (change)="onValChange($event, PermissionsOperationEnum.read, PermissionsEnum.supoPlus)">
+                            Supo Plus
+                        </mat-slide-toggle>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-slide-toggle color="primary" formControlName="supplierMatching" (change)="onValChange($event, PermissionsOperationEnum.read, PermissionsEnum.supplierMatching)">Supplier
+                            Matching</mat-slide-toggle>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-slide-toggle color="primary" formControlName="supplierNetwork" (change)="onValChange($event, PermissionsOperationEnum.read, PermissionsEnum.supplierNetwork)">Supplier
+                            Network</mat-slide-toggle>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</form>

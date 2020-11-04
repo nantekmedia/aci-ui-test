@@ -1,0 +1,44 @@
+{
+    "HOME": {
+      "TITLE": "Hello Angular with ngx-translate!",
+      "SELECT": "Change language"
+    },
+    "COMMOM": {
+      "OVERVIEW": "Overview",
+      "GUIDELINES": "Guidelines",
+      "HOW-TO": "How to"
+    },
+    "MENU": {
+      "APP-MODULES": "App Modules",
+      "SUPPLIER-NETWORK": "Supplier Network",
+      "DASHBOARD": "Dashboard",
+      "UI-COMPONENTS": "UI Components",
+      "UI-SERVICES": "UI Services",
+      "AUTHENTIFICATION": "Authentification",
+      "COMMUNICATION": "Communication",
+      "CONFIGURATION": "Configuration",
+      "FEATURE-FLAG": "Feature flag",
+      "LAYOUT": "Layout",
+      "LOCALIZATION": "Localization",
+      "MENU": "Menu",
+      "NOTIFICATION": "Notification",
+      "PERMISSION": "Permission",
+      "STORAGE": "Storage",
+      "ADMINISTRATION": "Administration",
+      "SETTINGS": "Settings",
+      "PROFILE": "Profile",
+      "DATA-MANAGEMENT": "Data Management",
+      "USER-MANAGEMENT": "User Management",
+      "USERS": "Users",
+      "MODULES": "Modules"
+    },
+    "APP-MODULES": {
+      "ASSENTIA": "ASSENTIA",
+      "DSL": "DSL",
+      "SCIP": "SCIP",
+      "SUPO-PLUS": "Supo Plus",
+      "SUPPLIER-MATCHING": "Supplier Matching",
+      "SUPPLIER-NETWORK": "Supplier Network"
+    }
+  }
+  

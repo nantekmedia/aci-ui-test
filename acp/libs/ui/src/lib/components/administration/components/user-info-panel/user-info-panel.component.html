@@ -1,0 +1,119 @@
+
+<!-- User this as basic for form templates and code snippets -->
+<form [formGroup]="userDetailsForm" (ngSubmit)="onSubmit(userDetailsForm)">
+    <div class="row">
+        <div class="col-6">
+            <h1>Information</h1>
+        </div>
+        <div class="col-6 text-right">
+            <div *ngIf="this.editMode === false">
+                <!-- <button [disabled]="!this.userService.hasPermission(PermissionsEnum.admin, PermissionsOperationEnum.update)" class="example-icon settings-icon ml-1 float-right" type="button" aria-label="Example icon-button with heart icon"
+                mat-icon-button>
+                <button [disabled]="!this.userService.hasPermission(PermissionsEnum.admin, PermissionsOperationEnum.update)" (click)="onEditBtnClick()" mat-mini-fab color="primary" aria-label="Example icon button with a delete icon"
+                    type="button">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </button>
+            <button [routerLink]="'/acp/admin/users'" [disabled]="!this.userService.hasPermission(PermissionsEnum.admin, PermissionsOperationEnum.list)" class="example-icon settings-icon ml-1 float-right" mat-icon-button
+                aria-label="Example icon-button with heart icon">
+                <button type="button" [disabled]="!this.userService.hasPermission(PermissionsEnum.admin, PermissionsOperationEnum.list)" mat-mini-fab color="primary" aria-label="Example icon button with a delete icon">
+                    <mat-icon>reorder</mat-icon>
+                </button>
+            </button> -->
+                <button [routerLink]="'/acp/admin/users'" type="button" [disabled]="!this.userService.hasPermission(PermissionsEnum.admin, PermissionsOperationEnum.list)" (click)="onEditBtnClick()" mat-icon-button=""
+                    class="mat-focus-indicator mat-icon-button mat-button-base">
+                    <span class="mat-button-wrapper">
+                        <mat-icon role="img">reorder</mat-icon>
+                    </span>
+                    <span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round" ng-reflect-disabled="false" ng-reflect-centered="true"></span><span class="mat-button-focus-overlay">
+                    </span>
+                </button>
+                <button type="button" [disabled]="!this.userService.hasPermission(PermissionsEnum.admin, PermissionsOperationEnum.update)" (click)="onEditBtnClick()" mat-icon-button="" class="mat-focus-indicator mat-icon-button mat-button-base">
+                    <span class="mat-button-wrapper">
+                        <mat-icon role="img">edit</mat-icon>
+                    </span>
+                    <span matripple="" class="mat-ripple mat-button-ripple mat-button-ripple-round" ng-reflect-disabled="false" ng-reflect-centered="true"></span><span class="mat-button-focus-overlay">
+                    </span>
+                </button>
+            </div>
+            <div *ngIf="this.editMode === true">
+                <button [disabled]="userDetailsForm.invalid" class="btn btn-primary" type="submit">Submit</button>
+                <button class="btn btn-secondary ml-1" type="button" (click)="onCancel()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="img-max mx-auto">
+                <img [src]="'assets/images/'+user.avator" class="img-fluid d-block profile-img mb-4" alt="avatar">
+            </div>
+        </div>
+        <div class="col-sm-10">
+            <div class="form-row">
+                <div class="col-lg-4 mb-1" style="height: 100px;">
+                    <label for="firstName">First name</label>
+                    <input [ngClass]="{'is-invalid': userDetailsForm.controls.firstName.invalid, 'is-valid': userDetailsForm.controls.firstName.valid}" type="text" class="form-control" id="firstName" placeholder="First name"
+                        formControlName="firstName" required>
+                    <div class="text-success" *ngIf="userDetailsForm.get('firstName').valid">
+                        Looks good!
+                    </div>
+                    <div class="text-danger" *ngIf="userDetailsForm.controls.firstName.invalid">
+                        <div *ngIf="userDetailsForm.get('firstName').hasError('minlength')">
+                            Min length of 10.
+                        </div>
+                        <div *ngIf="userDetailsForm.get('firstName').hasError('required')">
+                            This field is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-1" style="height: 100px;">
+                    <label for="lastName">Last Name</label>
+                    <input [ngClass]="{'is-invalid': userDetailsForm.controls.lastName.invalid, 'is-valid': userDetailsForm.controls.lastName.valid}" type="text" class="form-control" id="lastName" placeholder="First name" formControlName="lastName"
+                        required>
+                    <div class="text-success" *ngIf="userDetailsForm.get('lastName').valid">
+                        Looks good!
+                    </div>
+                    <div class="text-danger" *ngIf="userDetailsForm.controls.lastName.invalid">
+                        <div *ngIf="userDetailsForm.get('lastName').hasError('minlength')">
+                            Min length of 2.
+                        </div>
+                        <div *ngIf="userDetailsForm.get('lastName').hasError('required')">
+                            This field is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-1" style="height: 100px;">
+                    <label for="username">Username</label>
+                    <input [ngClass]="{'is-invalid': userDetailsForm.controls.username.invalid, 'is-valid': userDetailsForm.controls.username.valid}" type="text" class="form-control" id="username" placeholder="Username" formControlName="username">
+                    <div class="text-success" *ngIf="userDetailsForm.get('username').valid">
+                        Looks good!
+                    </div>
+                    <div class="text-danger" *ngIf="userDetailsForm.controls.username.invalid">
+                        <div *ngIf="userDetailsForm.get('username').hasError('minlength')">
+                            Min length of 2.
+                        </div>
+                        <div *ngIf="userDetailsForm.get('username').hasError('required')">
+                            This field is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-1" style="height: 100px;">
+                    <label for="email">Email</label>
+                    <input [ngClass]="{'is-invalid': userDetailsForm.controls.email.invalid, 'is-valid': userDetailsForm.controls.email.valid}" type="text" class="form-control" id="email" placeholder="Email" formControlName="email">
+                    <div class="text-success" *ngIf="userDetailsForm.controls.email.valid">
+                        Looks good!
+                    </div>
+                    <div class="text-danger" *ngIf="userDetailsForm.controls.email.errors">
+                        <div *ngIf="userDetailsForm.controls.email.errors.email">
+                            Enter a valide email
+                        </div>
+                        <div *ngIf="userDetailsForm.controls.email.errors.required">
+                            This field is required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,331 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,500;1,900&display=swap');
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    // font-family: Roboto, 'Helvetica Neue', sans-serif;
+    // font-family: 'Oswald', sans-serif !important;
+    font-family: 'Fira Sans', sans-serif;
+    // overflow: visible;
+}
+
+// body {
+//   overflow-y: scroll;
+// }
+
+// html {
+//   overflow-y: hidden;
+// }
+
+// ::-webkit-scrollbar {
+//     -webkit-appearance: none;
+//     width: 20px;
+// }
+// ::-webkit-scrollbar-thumb {
+//     border-radius: 20px;
+//     background-color: rgba(0, 0, 0, 0.5);
+//     -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+// }
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #9b9b9b;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: rgb(255, 255, 255);
+}
+
+
+/* Importing Bootstrap SCSS file. */
+// @import '~bootstrap/scss/bootstrap';
+
+/* custom.scss */
+
+/* import the necessary Bootstrap files */
+// @import "bootstrap/functions";
+// @import "bootstrap/variables";
+
+@import '../../../node_modules/bootstrap/scss/functions';
+@import '../../../node_modules/bootstrap/scss/variables';
+
+/* -------begin customization-------- */
+@import './custom-variables.scss';
+
+/* or, use an existing variable */
+$theme-colors: (
+    primary: $primary,
+    secondary: $secondary,
+    danger: $danger,
+);
+/* -------end customization-------- */
+
+/* finally, import Bootstrap to set the changes! */
+// @import "bootstrap";
+
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+// @import '~bootstrap/scss/bootstrap';
+
+@import '~@angular/material/theming';
+@include mat-core();
+
+/* For use in src/lib/core/theming/_palette.scss */
+// Generated with http://mcg.mbitson.com/#!?mcgpalette0=%2330576d&themename=jsn
+$mat-primary: (
+    50: #e6ebed,
+    100: #c1cdd3,
+    200: #98abb6,
+    300: #6e8999,
+    400: #4f7083,
+    500: #30576d,
+    600: #2b4f65,
+    700: #24465a,
+    800: #1e3c50,
+    900: #132c3e,
+    A100: #7bc2ff,
+    A200: #48abff,
+    A400: #1594ff,
+    A700: #0088fb,
+    contrast: (
+        50: #000000,
+        100: #000000,
+        200: #000000,
+        300: #000000,
+        400: #ffffff,
+        500: #ffffff,
+        600: #ffffff,
+        700: #ffffff,
+        800: #ffffff,
+        900: #ffffff,
+        A100: #000000,
+        A200: #000000,
+        A400: #ffffff,
+        A700: #ffffff,
+    ),
+);
+
+//
+// $mat-primary: (
+//     50: #30576d,
+//     100: #30576d,
+//     200: #30576d,
+//     300: #30576d,
+//     400: #30576d,
+//     500: #30576d,
+//     600: #30576d,
+//     700: #30576d,
+//     800: #30576d,
+//     900: #30576d,
+//     A100: #30576d,
+//     A200: #30576d,
+//     A400: #30576d,
+//     A700: #30576d,
+//     contrast: (
+//         50: $dark-primary-text,
+//         100: $dark-primary-text,
+//         200: $dark-primary-text,
+//         300: $dark-primary-text,
+//         400: $dark-primary-text,
+//         500: $light-primary-text,
+//         600: $light-primary-text,
+//         700: $light-primary-text,
+//         800: $light-primary-text,
+//         900: $light-primary-text,
+//         A100: $dark-primary-text,
+//         A200: $light-primary-text,
+//         A400: $light-primary-text,
+//         A700: $light-primary-text,
+//     ),
+// );
+
+$mat-secondary: (
+    50: $secondary,
+    100: $secondary,
+    200: $secondary,
+    300: $secondary,
+    400: $secondary,
+    500: $secondary,
+    600: $secondary,
+    700: $secondary,
+    800: $secondary,
+    900: $secondary,
+    A100: $secondary,
+    A200: $secondary,
+    A400: $secondary,
+    A700: $secondary,
+    contrast: (
+        50: $dark-primary-text,
+        100: $dark-primary-text,
+        200: $dark-primary-text,
+        300: $dark-primary-text,
+        400: $dark-primary-text,
+        500: $light-primary-text,
+        600: $light-primary-text,
+        700: $light-primary-text,
+        800: $light-primary-text,
+        900: $light-primary-text,
+        A100: $dark-primary-text,
+        A200: $light-primary-text,
+        A400: $light-primary-text,
+        A700: $light-primary-text,
+    ),
+);
+
+$mat-danger: (
+    50: $danger,
+    100: $danger,
+    200: $danger,
+    300: $danger,
+    400: $danger,
+    500: $danger,
+    600: $danger,
+    700: $danger,
+    800: $danger,
+    900: $danger,
+    A100: $danger,
+    A200: $danger,
+    A400: $danger,
+    A700: $danger,
+    contrast: (
+        50: $dark-primary-text,
+        100: $dark-primary-text,
+        200: $dark-primary-text,
+        300: $dark-primary-text,
+        400: $dark-primary-text,
+        500: $light-primary-text,
+        600: $light-primary-text,
+        700: $light-primary-text,
+        800: $light-primary-text,
+        900: $light-primary-text,
+        A100: $dark-primary-text,
+        A200: $light-primary-text,
+        A400: $light-primary-text,
+        A700: $light-primary-text,
+    ),
+);
+
+$mat-warning: (
+    50: $warning,
+    100: $warning,
+    200: $warning,
+    300: $warning,
+    400: $warning,
+    500: $warning,
+    600: $warning,
+    700: $warning,
+    800: $warning,
+    900: $warning,
+    A100: $warning,
+    A200: $warning,
+    A400: $warning,
+    A700: $warning,
+    contrast: (
+        50: $dark-primary-text,
+        100: $dark-primary-text,
+        200: $dark-primary-text,
+        300: $dark-primary-text,
+        400: $dark-primary-text,
+        500: $light-primary-text,
+        600: $light-primary-text,
+        700: $light-primary-text,
+        800: $light-primary-text,
+        900: $light-primary-text,
+        A100: $dark-primary-text,
+        A200: $light-primary-text,
+        A400: $light-primary-text,
+        A700: $light-primary-text,
+    ),
+);
+
+$my-app-primary: mat-palette($mat-primary);
+$my-app-accent: mat-palette($mat-secondary, 500, 900, A100);
+$my-app-warn: mat-palette($mat-warning);
+$my-app-base: mat-palette($mat-warning);
+
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+
+@include angular-material-theme($my-app-theme);
+
+.disable-select {
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+// Define a custom typography config that overrides the font-family as well as the
+// `headlines` and `body-1` levels.
+$custom-typography: mat-typography-config(
+    $font-family: 'Fira Sans, sans-serif',
+    $headline: mat-typography-level(32px, 48px, 700),
+    $body-1: mat-typography-level(16px, 24px, 500),
+);
+
+@include mat-core($custom-typography);
+
+// Removing the horizontal scrollbar in sidenav
+.mat-drawer-inner-container {
+    overflow-x: hidden !important;
+}
+
+// Good: custom toggle colors
+// .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+//   background-color: blue; /*replace with your color*/
+// }
+
+// .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+//   background-color: skyblue;  /*replace with your color*/
+// }
+
+// .mat-slide-toggle.mat-checked.mat-disabled .mat-slide-toggle-thumb {
+//   background-color: blue; /*replace with your color*/
+// }
+
+// .mat-slide-toggle.mat-checked.mat-disabled .mat-slide-toggle-bar {
+//   background-color: skyblue;  /*replace with your color*/
+// }
+
+h1 {
+    margin: 0 !important;
+}
+
+// hr {
+//   margin-top: 0;
+//   margin-bottom: 1rem;
+
+//   &.primary {
+//     border: 2px solid red;
+//   }
+// }
+
+hr {
+    // background-color: $secondary;
+    margin-top: 0;
+    height: 0;
+    border: 0;
+    border-top: 1px solid $secondary; 
+
+    &.primary {
+        border-top: 1px solid $primary; 
+    }
+
+    &.danger {
+        background-color: $danger;
+    }
+}
+
+*:focus {
+    outline: 0 !important;
+}
+
+// Remove button outline
+// button:focus { outline:0 !important; }

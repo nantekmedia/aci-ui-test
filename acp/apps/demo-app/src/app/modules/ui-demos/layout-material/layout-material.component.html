@@ -1,0 +1,52 @@
+<div class="jumbotron bg-dark text-white">
+    
+    <div class="h1"><a href="https://angular.io/" target="blank">
+        <img style="height: 70px;" src="assets/images/angular.png"></a>
+        Angular Material Layout Exploration
+    </div>
+    <!-- <h1>
+        <a href="https://angular.io/" target="blank"><img style="height: 70px;" src="assets/images/angular.png"></a>
+        Angular Material Layout Exploration
+    </h1> -->
+    <div >
+        <p style="margin-left: 75px;" class="lead">Exploration of features and capabilities of Angular Material responsive framework.</p>
+        <br>
+        <ul>
+            <li>Mat Grid List</li>
+            <li>FxLayout</li>
+            <li>BreakpointObserver</li>
+        </ul>
+    </div>
+</div>
+
+<h1>Mat Grid List</h1>
+<hr>
+<mat-grid-list cols="4" rowHeight="100px" gutterSize="5px">
+    <!-- <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows" [style.backgroundColor] = "tile.color">         -->
+    <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows">
+        <mat-card class="dashboard-card">
+            <mat-card-header>
+                <mat-card-title>
+                    Material
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                {{tile.text}}
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<br><br>
+<mat-grid-list cols="4" rowHeight="100px" gutterSize="10px">
+    <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows"
+        [style.backgroundColor]="tile.color">
+    </mat-grid-tile>
+</mat-grid-list>
+
+
+<!-- <h1>FxLayout</h1> -->
+<!-- <hr> -->
+<br>
+<br>
+<acp-form-material></acp-form-material>

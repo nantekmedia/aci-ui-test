@@ -1,0 +1,13 @@
+
+
+@import "../../../../custom-variables.scss";
+
+.my-card-header {
+    color: white !important;
+    background-color: $primary !important;
+}
+
+.form-control:focus {
+    border-color: $secondary;
+    box-shadow: 0 0 0 0.15rem rgba(3, 3, 3, 0.25);
+} 
